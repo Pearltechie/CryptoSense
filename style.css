@@ -1219,11 +1219,8 @@ footer {
     .mobile-menu-close:hover {
         color: var(--secondary);
     }
-    .btn btn-outline {
-        width:10px;
-        height:10px;
-        padding: 5px 10px;
-        font-size: 0.2rem;
-        margin-left: 10px;
-    }
+   #signupBtn{
+    left: 300px;
+    border-radius: 20px;
+  }  
 }
