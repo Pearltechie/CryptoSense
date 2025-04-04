@@ -1220,7 +1220,7 @@ footer {
         color: var(--secondary);
     }
    #signupBtn{
-    left: 300px;
+    left: 250px;
     border-radius: 20px;
   }  
 }
