@@ -1,4 +1,4 @@
-CryptoSense
+
 CryptoSense is a cutting-edge cryptocurrency market sentiment dashboard that provides real-time data, AI-powered sentiment analysis, interactive charts, and portfolio management tools. It is designed to empower users with insights and tools to make informed decisions in the dynamic world of cryptocurrency trading.
 
 Features
