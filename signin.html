@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Authentication</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Background Animation */
+body {
+    background: black;
+    background-size: 500% 500%;
+    animation: gradientAnimation 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* Glassmorphism Effect with Polygon Shape */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px;
+    width: 500px;
+    text-align: center;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 2s ease-in-out, float 6s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Futuristic Borders */
+.container::before, .container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid  var(--primary);
+    border-radius: 150px;
+    pointer-events: none;
+    animation: borderAnimation 5s linear infinite;
+}
+
+.container::after {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    animation-duration: 10s;
+}
+
+@keyframes borderAnimation {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(10px, 10px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Inputs and Buttons */
+input, select, button {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 30px;
+    font-size: 13px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+input, select {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+input:focus, select:focus {
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+button {
+    background: linear-gradient(90deg, #ff416c, #ff4b2b);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 10px 20px rgba(255, 75, 43, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0px 5px 10px rgba(255, 75, 43, 0.3);
+}
+
+/* Social Login Buttons */
+.social-login button {
+    background: #4285F4;
+    color: white;
+    margin-top: 5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.social-login button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 10px 20px rgba(66, 133, 244, 0.3);
+}
+
+#forgot-password {
+    color: #ff4b2b;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+#forgot-password:hover {
+    color: #ff416c;
+}
+
+span {
+    color: #4285F4;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+span:hover {
+    color: #ff416c;
+}
+
+/* Animations */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+/* Futuristic Hover Effects */
+input:hover, select:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+#language {
+    background: hsl(0, 1%, 55%);
+}
+.sign {
+    color: whitesmoke;
+}
+
+
+</style>
+<body>
+
+    <div class="container">
+        <div class="form-container">
+            <h1>CryptoSense</h1>
+            <form id="auth-form">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="text" id="username"   placeholder="Username" required>
+                <input type="email" id="email"  placeholder="Email" required>
+                <input type="password" id="password"  placeholder="Password" required>
+                <input type="tel" id="phone"  placeholder="Phone Number" required>
+                <select id="language" required>
+                    <option value="">Select Language</option>
+                    <option value="English">English</option>
+                    <option value="French">French</option>
+                    <option value="Spanish">Spanish</option>
+                </select>
+                
+                <button type="submit" id="submit-btn">Sign Up</button>
+            </form>
+
+            <div class="social-login">
+                <button onclick="googleLogin()">Login with Google</button>
+                <button onclick="facebookLogin()">Login with Facebook</button>
+            </div>
+
+            <p id="switch-form">Already have an account? <span onclick="toggleForm()">Login</span></p>
+            <p id="forgot-password" onclick="resetPassword()">Forgot Password?</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("auth-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    let name = document.getElementById("name").value;
+    let username = document.getElementById("username").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let phone = document.getElementById("phone").value;
+    let language = document.getElementById("language").value;
+
+    if (!email || !password) {
+        alert("Email and Password are required.");
+        return;
+    }
+
+    let userData = { name, username, email, password, phone, language };
+
+    if (isLoginMode) {
+        alert("Logging in...");
+    } else {
+        localStorage.setItem("user", JSON.stringify(userData));
+        alert("Sign Up Successful!");
+    }
+
+    document.getElementById("auth-form").reset();
+});
+
+let isLoginMode = false;
+function toggleForm() {
+    isLoginMode = !isLoginMode;
+    document.getElementById("form-title").textContent = isLoginMode ? "Login" : "Sign up";
+    document.getElementById("name").style.display = isLoginMode ? "none" : "block";
+    document.getElementById("username").style.display = isLoginMode ? "none" : "block";
+    document.getElementById("phone").style.display = isLoginMode ? "none" : "block";
+    document.getElementById("language").style.display = isLoginMode ? "none" : "block";
+    document.getElementById("switch-form" ).innerHTML = isLoginMode 
+        ? "Don't have an account? <span onclick='toggleForm()'>Sign Up</span>"
+        : "Already have an account? <span onclick='toggleForm()'>Login</span>";
+}
+
+function googleLogin() {
+    alert("Google Login triggered.");
+}
+
+function facebookLogin() {
+    alert("Facebook Login triggered.");
+}
+
+function resetPassword() {
+    let email = prompt("Enter your email for password recovery:");
+    if (email) {
+        alert("Password reset link sent to " + email);
+    }
+}
+
+    </script>
+</body>
+</html>
