@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Market Sentiment Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dark-mode-transition"></div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-chart-line"></i>
+                CryptoSense
+            </a>
+            </button>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Dashboard</a>
+                <a href="#marketOverview" class="nav-link">Market</a>
+                <a href="#news" class="nav-link">News</a>
+                <a href="#coinVault" class="nav-link">Portfolio</a>
+                <a href="#hero" class="nav-link">About</a>
+            </div>
+            <div class="auth-buttons">
+                <button class="btn btn-outline" id="loginBtn">Login</button>
+                <button  class="btn btn-primary" id="signupBtn">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content fade-up">
+                <h1>Crypto Market Insights</h1>
+                <p>Real-time cryptocurrency data, market trends, and AI-powered sentiment analysis to help you make informed decisions.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">Explore Market</button>
+                    <button class="btn btn-outline"><a href="marketOverview"></a>Learn More</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/Crypto.jpg" alt="Crypto illustration">
+            </div>
+        </div>
+    </section>
+
+    <!-- Market overview -->
+    <section class="market-overview" id="marketOverview">
+        <div class="container">
+            <h2 class="section-title">Market Overview</h2>
+            <div class="crypto-grid" id="cryptoGrid">
+                <!-- Crypto cards will be inserted here via JavaScript -->
+                <div id="cryptoGrid" class="crypto-grid">
+                    <!-- Bitcoin -->
+                    <div class="crypto-card">
+                        <div class="crypto-card-header">
+                            <div class="coin-info">
+                                <div class="coin-logo">
+                                    <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="Bitcoin logo">
+                                </div>
+                                <div class="coin-name">
+                                    <h3>Bitcoin</h3>
+                                    <span>BTC</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="crypto-card-body">
+                            <div class="price">$62,483.21</div>
+                            <div class="price-change up">
+                                <i class="fas fa-caret-up"></i> 2.4%
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Ethereum -->
+                    <div class="crypto-card">
+                        <div class="crypto-card-header">
+                            <div class="coin-info">
+                                <div class="coin-logo">
+                                    <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="Ethereum logo">
+                                </div>
+                                <div class="coin-name">
+                                    <h3>Ethereum</h3>
+                                    <span>ETH</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="crypto-card-body">
+                            <div class="price">$3,247.89</div>
+                            <div class="price-change up">
+                                <i class="fas fa-caret-up"></i> 5.2%
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Binance Coin -->
+                    <div class="crypto-card">
+                        <div class="crypto-card-header">
+                            <div class="coin-info">
+                                <div class="coin-logo">
+                                    <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.png" alt="Binance Coin logo">
+                                </div>
+                                <div class="coin-name">
+                                    <h3>Binance Coin</h3>
+                                    <span>BNB</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="crypto-card-body">
+                            <div class="price">$542.63</div>
+                            <div class="price-change down">
+                                <i class="fas fa-caret-down"></i> -1.3%
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Solana -->
+                    <div class="crypto-card">
+                        <div class="crypto-card-header">
+                            <div class="coin-info">
+                                <div class="coin-logo">
+                                    <img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="Solana logo">
+                                </div>
+                                <div class="coin-name">
+                                    <h3>Solana</h3>
+                                    <span>SOL</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="crypto-card-body">
+                            <div class="price">$128.72</div>
+                            <div class="price-change up">
+                                <i class="fas fa-caret-up"></i> 8.7%
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Cardano -->
+                    <div class="crypto-card">
+                        <div class="crypto-card-header">
+                            <div class="coin-info">
+                                <div class="coin-logo">
+                                    <img src="https://cryptologos.cc/logos/cardano-ada-logo.png" alt="Cardano logo">
+                                </div>
+                                <div class="coin-name">
+                                    <h3>Cardano</h3>
+                                    <span>ADA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="crypto-card-body">
+                            <div class="price">$0.5142</div>
+                            <div class="price-change down">
+                                <i class="fas fa-caret-down"></i> -2.8%
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- XRP -->
+                    <div class="crypto-card">
+                        <div class="crypto-card-header">
+                            <div class="coin-info">
+                                <div class="coin-logo">
+                                    <img src="https://cryptologos.cc/logos/xrp-xrp-logo.png" alt="XRP logo">
+                                </div>
+                                <div class="coin-name">
+                                    <h3>XRP</h3>
+                                    <span>XRP</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="crypto-card-body">
+                            <div class="price">$0.6831</div>
+                            <div class="price-change up">
+                                <i class="fas fa-caret-up"></i> 1.5%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add the sidebar here -->
+        <div class="market-sidebar">
+            <!-- Top Gainers -->
+            <div class="top-gainers">
+                <h3>Top Gainers</h3>
+                <ul>
+                    <li>
+                        <span>Solana (SOL)</span>
+                        <span class="price-change up">+8.7%</span>
+                    </li>
+                    <li>
+                        <span>Ethereum (ETH)</span>
+                        <span class="price-change up">+5.2%</span>
+                    </li>
+                    <li>
+                        <span>Bitcoin (BTC)</span>
+                        <span class="price-change up">+2.4%</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Top Losers -->
+            <div class="top-losers">
+                <h3>Top Losers</h3>
+                <ul>
+                    <li>
+                        <span>Cardano (ADA)</span>
+                        <span class="price-change down">-2.8%</span>
+                    </li>
+                    <li>
+                        <span>Binance Coin (BNB)</span>
+                        <span class="price-change down">-1.3%</span>
+                    </li>
+                    <li>
+                        <span>XRP</span>
+                        <span class="price-change down">-0.5%</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Real-Time Data</h3>
+                    <p class="feature-description">Get live updates on cryptocurrency prices, market cap, and volume from trusted sources.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="feature-title">AI Sentiment Analysis</h3>
+                    <p class="feature-description">Our AI analyzes news and social media to gauge market sentiment for each cryptocurrency.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3 class="feature-title">Price Alerts</h3>
+                    <p class="feature-description">Set custom alerts to notify you when coins reach your target price points.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3 class="feature-title">3D Visualization</h3>
+                    <p class="feature-description">Explore price movements with interactive 3D charts for deeper market insights.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="feature-title">AR Experience</h3>
+                    <p class="feature-description">View cryptocurrencies in augmented reality on your mobile device.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Swap Simulation</h3>
+                    <p class="feature-description">Practice crypto trading with our risk-free simulation tool.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Charts section -->
+    <section class="charts" id="charts">
+        <div class="container">
+            <h2 class="section-title">Interactive Charts</h2>
+            <div class="chart-tabs">
+                <canvas id="mainChart"></canvas>
+                <div class="chart-tab active" data-tab="price">Price</div>
+                <div class="chart-tab" data-tab="volume">Volume</div>
+                <div class="chart-tab" data-tab="marketcap">Market Cap</div>
+                <div class="chart-tab" data-tab="3d">3D View</div>
+            </div>
+            
+    </div>
+</section>
+            </div>
+
+            <!-- News section -->
+    <section class="news" id="news">
+        <div class="container">
+            <h2 class="section-title">Crypto News & Updates</h2>
+            <div class="news-filter">
+                <button class="news-filter-btn active">All News</button>
+                <button class="news-filter-btn">Bitcoin</button>
+                <button class="news-filter-btn">Ethereum</button>
+                <button class="news-filter-btn">DeFi</button>
+                <button class="news-filter-btn">NFTs</button>
+                <button class="news-filter-btn">Regulation</button>
+            </div>
+            <div class="news-grid" id="newsGrid">
+                <!-- News cards will be inserted here via JavaScript -->
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="images/bitcoin logo.jpg" alt="Bitcoin News">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">April 2, 2025</div>
+                        <h3 class="news-title">Bitcoin Hits New All-Time High as Institutional Adoption Grows</h3>
+                        <p class="news-excerpt">Bitcoin has reached a new all-time high as more institutional investors add the cryptocurrency to their portfolios.</p>
+                        <button class="btn btn-outline">Read More</button>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="images/EUTHEREUM.jpg" alt="Ethereum News">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">April 1, 2025</div>
+                        <h3 class="news-title">Ethereum Completes Major Network Upgrade</h3>
+                        <p class="news-excerpt">The Ethereum network has successfully implemented its latest upgrade, bringing improved scalability and lower gas fees.</p>
+                        <button class="btn btn-outline">Read More</button>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="images/cryptonews.jpg" alt="Regulation News">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">March 30, 2025</div>
+                        <h3 class="news-title">SEC Approves New Crypto ETF Applications</h3>
+                        <p class="news-excerpt">The US Securities and Exchange Commission has approved several new cryptocurrency ETF applications, signaling growing acceptance.</p>
+                        <button class="btn btn-outline">Read More</button>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="images/defi.jpg" alt="DeFi News">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">March 29, 2025</div>
+                        <h3 class="news-title">New DeFi Protocol Reaches $1 Billion in Total Value Locked</h3>
+                        <p class="news-excerpt">A new decentralized finance protocol has quickly accumulated over $1 billion in total value locked, becoming one of the fastest-growing DeFi projects.</p>
+                        <button class="btn btn-outline">Read More</button>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="images/nft.jpg" alt="NFT News">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">March 28, 2025</div>
+                        <h3 class="news-title">NFT Market Shows Signs of Recovery After Months of Decline</h3>
+                        <p class="news-excerpt">The NFT market is showing signs of recovery with increasing sales volumes and new projects gaining traction after months of declining interest.</p>
+                        <button class="btn btn-outline">Read More</button>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="images/new crypto.jpg" alt="Bitcoin News">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">March 27, 2025</div>
+                        <h3 class="news-title">Major Bank Launches Cryptocurrency Custody Service</h3>
+                        <p class="news-excerpt">One of the world's largest banks has announced the launch of a cryptocurrency custody service for institutional clients.</p>
+                        <button class="btn btn-outline">Read More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coin vault section -->
+    <section class="coin-vault" id="coinVault">
+        <div class="container">
+            <h2 class="section-title">Your Coin Vault</h2>
+            <div class="vault-grid" id="vaultGrid">
+                <!-- Vault cards will be inserted here via JavaScript -->
+                <div class="vault-card">
+                    <div class="vault-header">
+                        <h3>Bitcoin</h3>
+                        <span>BTC</span>
+                    </div>
+                    <div class="vault-body">
+                        <p>Amount: <strong>0.58</strong></p>
+                        <p>Value: <strong>$36,240.26</strong></p>
+                    </div>
+                </div>
+                
+                <div class="vault-card">
+                    <div class="vault-header">
+                        <h3>Ethereum</h3>
+                        <span>ETH</span>
+                    </div>
+                    <div class="vault-body">
+                        <p>Amount: <strong>4.32</strong></p>
+                        <p>Value: <strong>$14,030.88</strong></p>
+                    </div>
+                </div>
+                
+                <div class="vault-card">
+                    <div class="vault-header">
+                        <h3>Solana</h3>
+                        <span>SOL</span>
+                    </div>
+                    <div class="vault-body">
+                        <p>Amount: <strong>25.6</strong></p>
+                        <p>Value: <strong>$3,295.23</strong></p>
+                    </div>
+                </div>
+                
+                <div class="vault-card">
+                    <div class="vault-header">
+                        <h3>XRP</h3>
+                        <span>XRP</span>
+                    </div>
+                    <div class="vault-body">
+                        <p>Amount: <strong>1520</strong></p>
+                        <p>Value: <strong>$1,038.31</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">
+                        <i class="fas fa-chart-line"></i>
+                        CryptoSense
+                    </div>
+                    <p class="footer-description">
+                        A comprehensive crypto market sentiment dashboard with real-time data, AI analysis, and interactive features.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#marketOverview">Market</a></li>
+                        <li><a href="#news">News</a></li>
+                        <li><a href="#coinVault">Portfolio</a></li>
+                        <li><a href="#features">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-title">Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-title">Newsletter</h3>
+                    <p class="footer-description">Subscribe to our newsletter for the latest crypto insights and updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email" class="form-input" style="margin-bottom: 10px;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 CryptoSense. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Voice button -->
+    <div class="voice-btn" id="voiceBtn">
+        <i class="fas fa-microphone"></i>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeLoginModal"><i class="fas fa-times"></i></button>
+            <h2 class="modal-title">Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-input" placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+            </form>
+            <p style="text-align: center; margin-top: 20px;">
+                Don't have an account? <a href="#" id="switchToSignup" style="color: var(--primary);">Sign up</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeSignupModal"><i class="fas fa-times"></i></button>
+            <h2 class="modal-title">Create Account</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-input" placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-input" placeholder="Create a password">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Confirm Password</label>
+                    <input type="password" class="form-input" placeholder="Confirm your password">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+            </form>
+            <p style="text-align: center; margin-top: 20px;">
+                Already have an account? <a href="#" id="switchToLogin" style="color: var(--primary);">Login</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chart.js/3.9.1/chart.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const ctx = document.getElementById('mainChart').getContext('2d');
+
+    // Example chart data
+    const chart = new Chart(ctx, {
+        type: 'line', // Chart type (e.g., 'line', 'bar', 'pie')
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June'], // X-axis labels
+            datasets: [{
+                label: 'Price',
+                data: [62000, 63000, 61000, 64000, 65000, 66000], // Y-axis data
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderWidth: 2,
+                tension: 0.4, // Smooth curve
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top'
+                }
+            },
+            scales: {
+                x: {
+                    grid: {
+                        display: false
+                    }
+                },
+                y: {
+                    ticks: {
+                        callback: function (value) {
+                            return '$' + value.toLocaleString(); // Format Y-axis values
+                        }
+                    }
+                }
+            }
+        }
+    });
+});
+    </script>
+</body>
+</html>
